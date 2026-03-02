@@ -1,0 +1,214 @@
+@mixin adaptiveProperty($propertyName, $deskSize, $mobSize) {
+    $addSize: $deskSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+    #{$propertyName}: numToRem($mobSize);
+
+    @media (min-width: numToPx($adaptivePropertyMinViewport + 1)) {
+        #{$propertyName}: calc(#{numToRem($mobSize)} + #{$addSize} * ((100vw - #{numToPx($adaptivePropertyMinViewport)}) / (#{$adaptivePropertyMaxViewport} - #{$adaptivePropertyMinViewport})));
+    }
+
+    @media (min-width: numToPx($adaptivePropertyMaxViewport + 1)) {
+        #{$propertyName}: numToRem($deskSize);
+    }
+}
+
+@mixin abs-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@mixin fullWidthBeforeTablet {
+    @media (max-width: $tabletLargeP1) {
+        position: relative;
+        left: -$containerPaddingS;
+        width: 100vw;
+    }
+
+    @media (min-width: $mobileP1) and (max-width: $tabletLarge) {
+        left: -$containerPaddingM;
+    }
+}
+
+@mixin containerPaddingsBeforeTablet {
+    box-sizing: border-box;
+
+    @media (max-width: $mobile) {
+        padding-right: $containerPaddingS;
+        padding-left: $containerPaddingS;
+    }
+
+    @media (min-width: $mobileP1) and (max-width: $tabletLarge) {
+        padding-right: $containerPaddingM;
+        padding-left: $containerPaddingM;
+    }
+}
+
+@mixin marginTop($desktopValue, $mobileValue) {
+    margin-top: numToRem($mobileValue);
+
+    @media (min-width: $tabletSmallP1) {
+        margin-top: numToRem($desktopValue)
+    }
+}
+
+@mixin marginBottom($desktopValue, $mobileValue, $hideLastMargin: false) {
+    margin-bottom: numToRem($mobileValue);
+
+    @media (min-width: $tabletSmallP1) {
+        margin-bottom: numToRem($desktopValue)
+    }
+
+    @if ($hideLastMargin) {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@mixin padTopPadBot($pt, $pb) {
+    padding-top: $pt;
+    padding-bottom: $pb;
+}
+
+@mixin centerFlex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin pseudoInit($width: 0, $height: 0) {
+    position: absolute;
+    content: '';
+    width: $width;
+    height: $height;
+}
+
+@mixin squareDiv($sideLength) {
+    width: $sideLength;
+    height: $sideLength;
+}
+
+@mixin centerByPosition() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin trianglePseudoelement() {
+    content: '';
+    background-image: url(../assets/img/icons/triangle-round.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: .8rem;
+    height: .8rem;
+    display: block;
+    margin: .8rem;
+    transition: .2s ease-in-out;
+}
+
+@mixin triangleLink() {
+    position: relative;
+    padding-right: 1.9rem;
+    width: fit-content;
+
+    &:before {
+        position: absolute;
+        transition: all 0.2s ease-in-out;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0.2rem;
+        height: 3.2rem;
+        width: 1.6rem;
+        mask-image: url("../assets/img/icons/chevron-right-link.svg");
+        -webkit-mask-image: url("../assets/img/icons/chevron-right-link.svg");
+        background-color: $tertinary;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: 1.6rem 3.2rem;
+    }
+
+    &:hover {
+        transition: 0.2s all ease-in-out;
+
+        &::before {
+            transform: translate(0.5rem, -50%);
+        }
+    }
+
+    a {
+        display: block;
+        transition: max-height 0.2s ease-in-out;
+        overflow: hidden;
+        max-width: fit-content;
+        cursor: pointer;
+        @include adaptiveProperty("font-size", 16, 16);
+        line-height: 1;
+        letter-spacing: 1.9px;
+        color: $tertinary;
+        padding-right: 1.9rem;
+        margin-right: -1.9rem;
+        padding-bottom: 0.2rem;
+
+        &::before {
+            /* background-color: $tertinary; */
+            display: none;
+        }
+    }
+}
+
+@mixin sliderDots($color) {
+    margin-top: 3.7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+
+    li {
+        &::after {
+            display: none;
+        }
+        padding-left: 0;
+        margin-top: 0;
+        button {
+            color: transparent;
+            width: 1.8rem;
+            height: 1.8rem;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 1rem;
+                height: 1rem;
+                border: 1px solid $color;
+                transform: rotate(45deg);
+                transition: 0.2s all ease-in-out;
+            }
+
+            &:hover {
+                &::before {
+                    background: rgba($color, 0.5);
+                }
+            }
+        }
+
+        &.slick-active {
+            button {
+                &::before {
+                    background-color: $color;
+                }
+            }
+        }
+    }
+}

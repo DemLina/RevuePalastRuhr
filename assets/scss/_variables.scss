@@ -1,0 +1,50 @@
+@use 'sass:math';
+// container
+$containerPaddingS: 2rem;
+$containerPaddingM: 6rem;
+$containerPadding: 7rem;
+
+// Sizing
+$containerMaxWidth: 1512;
+$K2Large: 1921px;
+$deskXLarge: 1800px;
+$deskXLargeP1:  math.div($deskXLarge, 1px) + 1px;
+$desk1800: 1799px;
+$desk1800P1:  math.div($desk1800, 1px) + 1px;
+$deskLarge: 1512px;
+$deskLargeP1: math.div($deskLarge, 1px) + 1px;
+$desktop: 1440px;
+$desktopP1: math.div($desktop, 1px) + 1px;
+$tabletLarge: 1279px;
+$tabletLargeP1: math.div($tabletLarge, 1px) + 1px;
+$tablet: 1024px; 
+$tabletP1:  math.div($tablet, 1px) + 1px; 
+$tabletSmall: 767px;
+$tabletSmallP1: math.div($tabletSmall, 1px) + 1px;
+$mobile: 639px;
+$mobileP1:  math.div($mobile, 1px) + 1px;
+$mobileSmall: 415px;
+$mobileSmallP1: math.div($mobileSmall, 1px) + 1px;
+
+// Adaptive Property Sizing
+$adaptivePropertyMaxViewport: $containerMaxWidth;
+$adaptivePropertyMinViewport: 375;
+
+
+// Colors
+
+// base
+$white: #ffffff;
+$black: #000000;
+$transparent: rgba(0, 0, 0, .0);
+$primary: #000000;
+
+
+
+// Fonts
+$primary-font: "", sans-serif;
+$secondary-font: "", sans-serif;
+
+
+
+

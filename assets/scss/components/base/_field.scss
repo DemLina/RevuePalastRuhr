@@ -1,0 +1,65 @@
+.field {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    
+    &.invalid {
+      .validation {
+        display: block;
+
+      }
+      textarea {
+        border-color: #dc3232;
+      }
+    }
+    input,
+    textarea,
+    select {
+        outline: none;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+
+        &::placeholder {
+        }
+        &.wpcf7-not-valid {
+          border: .063px solid #dc3232;
+        }
+    }
+    
+
+    .validation {
+      margin-top: .5rem;
+      color: #dc3232;
+      display: none;
+
+    }
+    textarea {
+        resize: none;
+        overflow-y: auto;
+        // border-radius: 1.2rem;
+        @media(min-width: $tabletSmallP1) {
+          // border-radius: 3rem;
+        }
+    }
+
+
+
+  .wpcf7-form-control-wrap {
+    width: 100%;
+  }
+
+  .wpcf7-not-valid-tip {
+    font-size: .8rem;
+    margin-top: .4rem;
+  }
+}
+
+.wpcf7-response-output {
+  display: none;
+}

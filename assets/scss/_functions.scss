@@ -1,0 +1,25 @@
+@use 'sass:math';
+
+@function pxToRem($value) {
+  @return math.div(strip-unit($value), 10) + rem;
+}
+
+@function remToPx($value) {
+  @return remToNum($value) + px;
+}
+
+@function remToNum($value) {
+  @return math.div(strip-unit($value), 10);
+}
+
+@function numToRem($value) {
+  @return math.div($value, 10) + rem;
+}
+
+@function numToPx($value) {
+  @return $value + px;
+}
+
+@function strip-unit($num) {
+  @return math.div($num, ($num * 0 + 1));
+}

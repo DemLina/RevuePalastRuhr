@@ -1,0 +1,80 @@
+#SSH DEPLOY
+#name: Deploy to server
+#
+#on:
+#  push:
+#    branches:
+#      - main
+#
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v3
+#
+#      - name: Set up Node.js
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: '18'
+#
+#      - name: Install dependencies
+#        run: yarn install
+#
+#      - name: Build the project
+#        run: yarn build
+#
+#      - name: Deploy with rsync
+#        env:
+#          remote_host: ${{ secrets.WEBSITE_HOST }}
+#          remote_port: "22"
+#          remote_user: ${{ secrets.WEBSITE_USER_NAME }}
+#          remote_key: ${{ secrets.WEBSITE_SSH_KEY }}
+#          local_dir: "./"
+#          remote_dir: ${{ secrets.WEBSITE_THEME_PATH }}
+#        run: |
+#          mkdir ~/.ssh
+#          echo "$remote_key" > ~/.ssh/gh_actions_key
+#          chmod 600 ~/.ssh/gh_actions_key
+#          rsync -avzr --exclude 'node_modules' --exclude '.git' --exclude 'html' --exclude '.github' --exclude '.gitignore' \
+#          -e "ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no" \
+#          ${local_dir} ${remote_user}@${remote_host}:${remote_dir}
+
+
+# FTP DEPLOY
+#name: 🚀 Deploy website on push
+#on:
+#  push:
+#    branches:
+#      - main
+#jobs:
+#  web-deploy:
+#    name: 🎉 Deploy
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: 🚚 Get latest code
+#        uses: actions/checkout@v4
+#
+#      - name: Use Node.js >= 22
+#        uses: actions/setup-node@v4
+#        with:
+#          node-version: '>=22.0'
+#
+#      - name: 🔨 Build Project
+#        run: |
+#          yarn install
+#          yarn build
+#
+#      - name: 📂 Sync files
+#        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+#        with:
+#          server: ${{ secrets.WEBSITE_HOST }}
+#          username: ${{ secrets.WEBSITE_USER_NAME }}
+#          password: ${{ secrets.WEBSITE_SSH_KEY }}
+#          server-dir: ${{ secrets.WEBSITE_THEME_PATH }}
+#          exclude: |
+#            **/.git*
+#            **/.git*/**
+#            **/node_modules/**
+#            **/html/**

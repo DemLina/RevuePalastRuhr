@@ -1,0 +1,37 @@
+{
+  "name": "devTemplate",
+  "version": "1.0.0",
+  "main": "assets/main.js",
+  "repository": "https://github.com/obiwan00/webpackTemplate2.git",
+  "author": "MIG",
+  "license": "MIT",
+  "scripts": {
+    "build:dev": "webpack --mode=development --config webpack.config.js",
+    "watch": "yarn build:dev --watch",
+    "build-webpack": "webpack --mode=production --config webpack.config.js",
+    "build": "yarn build-webpack"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "bable-loader": "^0.0.1-security",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "file-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^2",
+    "postcss-loader": "^8.1.1",
+    "sass-loader": "^12",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5",
+    "webpack": "^5",
+    "webpack-cli": "^5",
+    "webpack-dev-server": "^5"
+  },
+  "dependencies": {
+    "sass": "^1.66.1"
+  },
+  "engines": {}
+}

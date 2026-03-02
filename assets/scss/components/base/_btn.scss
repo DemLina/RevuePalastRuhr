@@ -1,0 +1,19 @@
+.btn {
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: center;
+    text-align: center;
+
+    text-transform: uppercase;
+    transition: .2s all;
+    &:hover{
+    }
+
+}
+
+

@@ -1,0 +1,14 @@
+.padding, section, header, footer {
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: $containerPaddingS;
+    padding-left: $containerPaddingS;
+    @media (min-width: $mobileP1) {
+        padding-right: $containerPaddingM;
+        padding-left: $containerPaddingM;
+    }
+    @media (min-width: $tabletLargeP1) {
+        padding-right: $containerPadding;
+        padding-left: $containerPadding;
+    }
+}

@@ -1,0 +1,269 @@
+html {
+  font-family: $primary-font;
+  color: $black;
+  font-size: 62.5%;
+
+  -webkit-font-smoothing: antialiased;
+
+  @media (min-width: $K2Large) {
+    font-size: 0.52vw;
+  }
+
+  &.dark {
+    color: $white;
+
+    a {
+      color: $white;
+
+    }
+  }
+}
+
+strong,
+b {
+  font-weight: 500;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+mark {
+  background-color: transparent;
+}
+
+a {
+  transition: .2s all;
+  color: $primary;
+  text-underline-offset: 0.1em;
+  text-decoration: underline;
+  text-decoration-thickness: 0.04em;
+  text-decoration-color: transparent;
+  transition: .2s all;
+  &:hover {
+      text-decoration-color: inherit;
+  }
+}
+
+h1,
+.h1 {
+  @include adaptiveProperty("font-size", 55, 26);
+  position: relative;
+  font-weight: 400;
+  font-family: $secondary-font;
+  line-height: 1.2;
+
+  @media (min-width: $tabletSmallP1) and (max-width: $tabletLarge) {
+    font-size: 3.7rem;
+  }
+
+  @media(min-width: $tabletSmallP1) {
+    line-height: normal;
+  }
+}
+
+h2,
+.h2 {
+  @include adaptiveProperty("font-size", 60, 28);
+  position: relative;
+  font-weight: 400;
+  line-height: 1.2;
+  font-family: $secondary-font;
+
+  @media (min-width: $tabletSmallP1) and (max-width: $tabletLarge) {
+    font-size: 6rem;
+  }
+  @media(min-width: $tabletSmallP1) {
+    line-height: 1.116;
+  }
+}
+
+h3,
+.h3 {
+  @include adaptiveProperty("font-size", 44, 28);
+  line-height: 1.2;
+  font-weight: 300;
+  font-family: $secondary-font;
+   @media (min-width: $tabletSmallP1) and (max-width: $tabletLarge) {
+    font-size: 4.4rem;
+  }
+  @media(min-width: $tabletSmallP1) {
+    line-height: normal;
+  }
+}
+
+h4,
+.h4 {
+  @include adaptiveProperty('font-size', 30, 19);
+  line-height: 1.2;
+  font-weight: 300;
+  font-family: $secondary-font;
+  @media (min-width: $tabletSmallP1) and (max-width: $tabletLarge) {
+    font-size: 3rem;
+  }
+  @media(min-width: $tabletSmallP1) {
+    line-height: normal;
+    font-weight: 400;
+  }
+}
+
+h5,
+.h5 {
+  @include adaptiveProperty('font-size', 25, 19);
+  font-weight: 400;
+  line-height: normal;
+  @media (min-width: $tabletSmallP1) and (max-width: $tabletLarge) {
+    font-size: 2.5rem;
+  }
+}
+
+h6,
+.h6 {
+  @include adaptiveProperty('font-size', 15, 13);
+  // letter-spacing: .204rem;
+  // text-transform: uppercase;
+  line-height: 1.6;
+  font-weight: 400;
+
+  @media (min-width: $tabletSmallP1) and (max-width: $tabletLarge) {
+    font-size: 1.5rem;
+  }
+  @media(min-width: $tabletSmallP1) {
+    line-height: normal;
+  }
+
+}
+
+
+
+
+p,
+.p1,
+li {
+  @include adaptiveProperty('font-size', 17, 15);
+  line-height: 1.67;
+  @media (min-width: $tabletSmallP1) and (max-width: $tabletLarge) {
+    font-size: 1.7rem;
+  }
+  @media(min-width: $tabletSmallP1) {
+    line-height: 1.8;
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.25rem;
+}
+
+p,
+li,
+ul,
+ol {
+  margin-top: 1.2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+table {
+  border: 1px solid #DDDDDD;
+  max-width: 100rem;
+  width: 100%;
+
+  th {
+    text-align: left;
+    @extend .p1;
+    font-weight: 700;
+    margin-top: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  td {
+    border: 1px solid #DDDDDD;
+    color: #404040;
+    @extend .p1;
+    margin-top: 1.2rem;
+    width: 42%;
+
+    &:last-child {
+      width: 58%;
+    }
+
+
+  }
+}
+
+ul,
+ol {
+  list-style: disc;
+  margin: 0;
+  padding-left: 1rem;
+
+  @media(min-width: $tabletP1) {
+    margin-top: 1.2rem;
+  }
+}
+
+
+ol {
+  list-style-type: decimal;
+
+}
+
+
+.reset-list {
+  list-style-type: none;
+  padding: unset;
+  margin: unset;
+
+  li {
+    padding: unset;
+    margin: unset;
+    line-height: 1;
+
+    &:after {
+      display: none;
+      width: unset;
+      height: unset;
+      position: unset;
+      top: unset;
+      left: unset;
+      background-color: unset;
+    }
+  }
+}
+small {
+  font-size: 1rem;
+}
+sup {
+  font-size: 0.65em;
+  vertical-align: super;
+}
+
+sub {
+  font-size: 0.65em;
+  vertical-align: sub;
+}
