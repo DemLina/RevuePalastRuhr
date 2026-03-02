@@ -2,10 +2,10 @@
 // container
 $containerPaddingS: 2rem;
 $containerPaddingM: 6rem;
-$containerPadding: 7rem;
+$containerPadding: 12rem;
 
 // Sizing
-$containerMaxWidth: 1512;
+$containerMaxWidth: 1200;
 $K2Large: 1921px;
 $deskXLarge: 1800px;
 $deskXLargeP1:  math.div($deskXLarge, 1px) + 1px;
@@ -15,7 +15,7 @@ $deskLarge: 1512px;
 $deskLargeP1: math.div($deskLarge, 1px) + 1px;
 $desktop: 1440px;
 $desktopP1: math.div($desktop, 1px) + 1px;
-$tabletLarge: 1279px;
+$tabletLarge: 1199px;
 $tabletLargeP1: math.div($tabletLarge, 1px) + 1px;
 $tablet: 1024px; 
 $tabletP1:  math.div($tablet, 1px) + 1px; 
@@ -37,13 +37,20 @@ $adaptivePropertyMinViewport: 375;
 $white: #ffffff;
 $black: #000000;
 $transparent: rgba(0, 0, 0, .0);
-$primary: #000000;
+$pink: #FF00EB;
+$olive: #9DD9D2;
+$orange: #F4D06F;
+$primaryDark: #A00A28;
+$primaryLight: #FF1A40;
+$blue: #003770;
+$dark: #262626;
+$primary: #9F0928;
 
 
 
 // Fonts
-$primary-font: "", sans-serif;
-$secondary-font: "", sans-serif;
+$primary-font: "Josefin Sans", sans-serif;
+$secondary-font: "Broadacre", sans-serif;
 
 
 

@@ -12,11 +12,47 @@
 </head>
 
 <body class="preload">
-    <header>
-
+    <header class="header">
+        <div class="header__fader js-menu-toggle"></div>
+        <div class="header__container container">
+            <figure class="header__logo">
+                <a href="#">
+                    <img width="190" height="40" src="../assets/images/logo.png" alt="image">
+                </a>
+            </figure>
+            <nav class="header__nav">
+                <button class="header__close js-menu-toggle"></button>
+                <ul class="header__menu">
+                    <li><a href="http://127.0.0.1:5500/html/index.html#">Show</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/Eventlocation.html#">Eventlocation</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/Besuch.html#">Besuch</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/Kreative.html#">Kreative</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/Direktion.html#">Direktion</a></li>
+                    <li><a href="http://127.0.0.1:5500/html/KONTAKT.html#">KONTAKT</a></li>
+                </ul>
+                <div class="header__action">
+                    <div class="header__link">
+                        <a href="#">
+                            Mondpalast
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9.613" height="10" viewBox="0 0 9.613 10">
+                                <path id="Icon_Doppelpfeil_Blau" d="M1.063,0,.2.7,3.827,4.982.2,9.261,1.063,10,5.306,4.982ZM5.587,0,4.725.7,8.334,4.982,4.725,9.261,5.587,10,9.813,4.982Z" transform="translate(-0.2)" fill="currentColor"/>
+                                </svg>
+                        </a>
+                    </div>
+                    <div class="header__cta">
+                        <a href="#">TICKETS</a>
+                    </div>
+                </div>
+            </nav>
+            <button class="header__burger js-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>
     <main>
-        <section></section>
+        <section style="height: 200vh;"></section>
     </main>
     <footer></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

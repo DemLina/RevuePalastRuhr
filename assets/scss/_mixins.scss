@@ -113,7 +113,7 @@
     height: .8rem;
     display: block;
     margin: .8rem;
-    transition: .2s ease-in-out;
+    transition: .2s ease-out;
 }
 
 @mixin triangleLink() {
@@ -123,7 +123,7 @@
 
     &:before {
         position: absolute;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-out;
         content: "";
         top: 50%;
         transform: translateY(-50%);
@@ -139,7 +139,7 @@
     }
 
     &:hover {
-        transition: 0.2s all ease-in-out;
+        transition: 0.2s all ease-out;
 
         &::before {
             transform: translate(0.5rem, -50%);
@@ -148,7 +148,7 @@
 
     a {
         display: block;
-        transition: max-height 0.2s ease-in-out;
+        transition: max-height 0.2s ease-out;
         overflow: hidden;
         max-width: fit-content;
         cursor: pointer;
@@ -193,7 +193,7 @@
                 height: 1rem;
                 border: 1px solid $color;
                 transform: rotate(45deg);
-                transition: 0.2s all ease-in-out;
+                transition: 0.2s all ease-out;
             }
 
             &:hover {

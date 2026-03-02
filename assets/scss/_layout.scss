@@ -1,13 +1,15 @@
-.padding, section, header, footer {
+.container {
     box-sizing: border-box;
     width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
     padding-right: $containerPaddingS;
     padding-left: $containerPaddingS;
     @media (min-width: $mobileP1) {
         padding-right: $containerPaddingM;
         padding-left: $containerPaddingM;
     }
-    @media (min-width: $tabletLargeP1) {
+    @media (min-width: 1200px) {
         padding-right: $containerPadding;
         padding-left: $containerPadding;
     }
